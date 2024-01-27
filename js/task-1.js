@@ -1,11 +1,8 @@
-const ulCategories = document.querySelectorAll(".item");
+const categories = document.querySelectorAll(".item");
 let temp = [];
-console.log(`Number of categories: ${ulCategories.length}`);
-ulCategories.forEach((el) => {
-  temp.push(el.children[1].children.length);
+console.log(`Number of categories: ${categories.length}`);
+
+categories.forEach((el) => {
+  console.log(el.firstElementChild.textContent);
+  console.log(el.lastElementChild.childElementCount);
 });
-const headTwo = document.querySelectorAll(".head-two");
-for (let i = 0; i < headTwo.length; i++) {
-  console.log(`Category: ${headTwo[i].textContent}`);
-  console.log(`Elements: ${temp[i]}`);
-}

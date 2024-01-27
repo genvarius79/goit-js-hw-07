@@ -14,27 +14,24 @@ function createBoxes(amount) {
     let j = 30;
     for (let i = 0; i < amount; i++) {
       const div = document.createElement("div");
-      div.classList.add(`containers-${i}`);
+      div.classList.add("box-item");
       boxes.append(div);
       div.style.width = `${j}px`;
       div.style.height = `${j}px`;
       div.style.backgroundColor = getRandomHexColor();
       j += 10;
-      controls.firstElementChild.value = null;
     }
+    controls.firstElementChild.value = null;
   }
 }
 
 function destroyBoxes() {
-  const divCollecsion = Array.from(boxes.children);
-  for (let i = 0; i < divCollecsion.length; i++) {
-    divCollecsion[i].remove();
-  }
+  boxes.innerHTML = "";
 }
 
 btnCreate.addEventListener("click", (event) => {
   destroyBoxes();
-  const amount = controls.firstElementChild.value;
+  const amount = Number(controls.firstElementChild.value);
   createBoxes(amount);
 });
 btnDestroy.addEventListener("click", (e) => {
