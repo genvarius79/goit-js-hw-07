@@ -7,7 +7,7 @@ const body = document.querySelector("body");
 const button = document.querySelector(".change-color");
 const span = document.querySelector(".color");
 
-function changeColorHendler(event) {
+function changeColorHendler() {
   const outputColor = getRandomHexColor();
   body.style.backgroundColor = outputColor;
   span.textContent = outputColor;

@@ -10,6 +10,7 @@ const btnDestroy = document.querySelector("[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
 function createBoxes(amount) {
+  destroyBoxes();
   if (amount >= 1 && amount <= 100) {
     let j = 30;
     for (let i = 0; i < amount; i++) {
@@ -30,7 +31,6 @@ function destroyBoxes() {
 }
 
 btnCreate.addEventListener("click", (event) => {
-  destroyBoxes();
   const amount = Number(controls.firstElementChild.value);
   createBoxes(amount);
 });
